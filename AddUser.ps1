@@ -46,4 +46,4 @@ $addUserParams = @{
 }
 Add-ScAzureDevopsUserToTeams @addUserParams
 
-Write-Host "User '$EmailAddress' is added to the default Contributors group in the project.." -ForegroundColor 'Green'
+Write-Host "User '$EmailAddress' is added to the default 'Contributors' group in the project '$ProjectName'.." -ForegroundColor 'Green'
