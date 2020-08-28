@@ -3,7 +3,7 @@ Param(
     [Parameter(Mandatory = $true)]
     [String] $OrganizationName,
     [Parameter(Mandatory = $true)]
-    [String] $ProjectId,
+    [String] $ProjectName,
     [Parameter(Mandatory = $true)]
     [String] $PersonalAccessToken,
     [Parameter(Mandatory = $true)]
@@ -14,10 +14,18 @@ Param(
 
 Import-Module -Name '.\Modules\Sitecore.General.psm1' -Force
 
+$projectParams = @{
+    OrganizationName    = $OrganizationName
+    PersonalAccessToken = $PersonalAccessToken
+    ProjectName         = $ProjectName
+}
+$projectId = ((Get-ScAzureDevOpsProject @projectParams).value |
+    Where-Object { $_.Name -eq $ProjectName }).id
+
 $projectDetailsParam = @{
     OrganizationName    = $OrganizationName
     PersonalAccessToken = $PersonalAccessToken
-    ProjectId           = $ProjectId
+    ProjectId           = $projectId
 }
 $projectDescriptor = (Get-ScAzureDevOpsProjectDescriptorDetails @projectDetailsParam).value
 

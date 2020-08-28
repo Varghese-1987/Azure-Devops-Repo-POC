@@ -18,6 +18,35 @@ function Get-SCAzureDevopsAuthenticationHeader {
     return $AzureDevOpsAuthenicationHeader
 }
 
+function Get-ScAzureDevOpsProject {
+    [cmdletBinding()]
+    param(
+
+        [Parameter(Mandatory = $true)]
+        $OrganizationName,
+
+        [Parameter(Mandatory = $true)]
+        $PersonalAccessToken,
+
+        [Parameter(Mandatory = $true)]
+        [string]$ProjectName,
+
+        [Parameter(Mandatory = $false)]
+        [string]$ApiVersion = '5.1-preview.1'
+    )
+
+    $endPoint = "https://dev.azure.com/$($OrganizationName)/_apis/projects?api-version=$ApiVersion"
+
+
+    $restParam = @{
+        Uri     = $endPoint
+        Headers = $(Get-SCAzureDevopsAuthenticationHeader -PersonalAccessToken $PersonalAccessToken)
+        Method  = 'GET'
+    }
+    Invoke-RestMethod @restParam
+
+}
+
 function Get-ScAzureDevOpsProjectDescriptorDetails {
     [cmdletBinding()]
     param(
