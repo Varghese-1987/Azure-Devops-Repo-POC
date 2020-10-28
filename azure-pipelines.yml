@@ -7,13 +7,13 @@ pool:
   vmImage: windows-2019
 
 steps:
-- task: PowerShell@2
+- task: AzurePowerShell@4
   inputs:
     targetType: inline
     pwsh: true
     script: |
      $PSVersionTable
      Install-Module AzureAD -AllowClobber -Force
-     Get-Module -ListAvailable|Where-Object{$_.Name -eq 'AzureAD'}
-     Import-Module AzureAD -UseWindowsPowerShell
+     $module=Get-Module -ListAvailable|Where-Object{$_.Name -eq 'AzureAD'}
+     Import-Module $module -UseWindowsPowerShell
    
