@@ -11,5 +11,6 @@ steps:
   inputs:
     targetType: inline
     script: |
-     Get-Module -ListAvailable
+     Install-Module AzureAD -AllowClobber -Force
+     Import-Module AzureAD
    
