@@ -11,6 +11,7 @@ steps:
   inputs:
     targetType: inline
     script: |
+    $PSVersionTable
      Install-Module AzureAD -AllowClobber -Force
-     Import-Module AzureAD
+     Import-Module AzureAD -UseWindowsPowerShell
    
