@@ -14,5 +14,6 @@ steps:
     script: |
      $PSVersionTable
      Install-Module AzureAD -AllowClobber -Force
+     Get-Module -ListAvailable
      Import-Module AzureAD -UseWindowsPowerShell
    
