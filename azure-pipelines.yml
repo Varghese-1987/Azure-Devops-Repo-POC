@@ -15,5 +15,6 @@ steps:
      $PSVersionTable
      Install-Module AzureAD -AllowClobber -Force
      $module=Get-Module -ListAvailable|Where-Object{$_.Name -eq 'AzureAD'}
-     Import-Module $module -UseWindowsPowerShell
+     $module
+     
    
