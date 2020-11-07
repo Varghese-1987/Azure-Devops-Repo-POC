@@ -11,9 +11,15 @@ steps:
   inputs:
     targetType: inline
     script: |
-     $PSVersionTable
-     Install-Module AzureAD -AllowClobber -Force
-     $module=Get-Module -ListAvailable|Where-Object{$_.Name -eq 'AzureAD'}
-     Import-Module -Name $module.Path 
+     try{
+       throw 'demo exception'
+     }
+     catch{
+       Write-Error 'Error'
+       Exit 1
+     }
+     Finally{
+       Write-Host "exited.."
+     }
      
    
