@@ -22,6 +22,11 @@ steps:
   displayName: 'Publish Artifact: drop'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
+- task: DownloadPipelineArtifact@2
+  displayName: 'Download Build Artifacts'
+  inputs:
+    patterns: '**/*.zip'
+    path: '$(Build.ArtifactStagingDirectory)'
 
      
    
