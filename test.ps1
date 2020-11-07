@@ -1,5 +1,5 @@
  try{
-       throw 'demo exception'
+       Write-Host 'no exception'
      }
      catch{
        Write-Error 'Error'
