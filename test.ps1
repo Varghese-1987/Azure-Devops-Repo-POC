@@ -1,5 +1,5 @@
  try{
-    fun
+           Write-Host 'fun'
      }
      catch{
        Write-Error 'Error'
@@ -8,7 +8,4 @@
      Finally{
        Write-Host "exited.."
      }
-     
-     function fun{
-       Write-Host 'fun'
-     }
+    
