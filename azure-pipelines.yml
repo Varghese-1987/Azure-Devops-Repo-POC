@@ -12,6 +12,13 @@ steps:
     targetType: filePath
     filePath: '$(system.defaultWorkingDirectory)/test.ps1'
   timeoutInMinutes: 120
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+      SourceFolder: '$(system.defaultworkingdirectory)'
+      Contents: '**\Logs\**'
+      TargetFolder: '$(build.ArtifactStagingDirectory)'
+  condition: succeededOrFailed()
 - task: PublishBuildArtifacts@1    
   displayName: 'Publish Artifact: drop'
   inputs:
