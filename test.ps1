@@ -1,5 +1,5 @@
  try{
-       Write-Host 'no exception'
+    fun
      }
      catch{
        Write-Error 'Error'
@@ -7,4 +7,8 @@
      }
      Finally{
        Write-Host "exited.."
+     }
+     
+     function fun{
+       throw ' exception'
      }
