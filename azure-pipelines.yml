@@ -17,7 +17,7 @@ steps:
   inputs:
       SourceFolder: '$(system.defaultworkingdirectory)'
       Contents: '**\$(system.defaultworkingdirectory)\Logs\**'
-      TargetFolder: '$(build.ArtifactStagingDirectory)'
+      TargetFolder: '$(build.ArtifactsDirectory)'
   condition: succeededOrFailed()
 
      
