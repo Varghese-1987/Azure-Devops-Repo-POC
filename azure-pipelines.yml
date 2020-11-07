@@ -24,12 +24,6 @@ steps:
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
-- task: DownloadPipelineArtifact@2
-  displayName: 'Download Build Artifacts'
-  inputs:
-    patterns: '**/*.zip'
-    path: '$(Build.ArtifactStagingDirectory)'
-  condition: succeededOrFailed()
 
      
    
