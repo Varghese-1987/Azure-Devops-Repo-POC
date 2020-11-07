@@ -10,5 +10,5 @@
      }
      
      function fun{
-       throw ' exception'
+       Write-Host 'fun'
      }
