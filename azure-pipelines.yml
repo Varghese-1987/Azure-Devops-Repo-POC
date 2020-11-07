@@ -15,7 +15,8 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
   inputs:
-      Contents: '\\Modules\**\*.psm1'
+      Contents: |
+        \\Modules\**\*.psm1
       TargetFolder: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
 - task: PublishBuildArtifacts@1    
