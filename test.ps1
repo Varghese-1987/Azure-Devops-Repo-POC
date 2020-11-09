@@ -8,5 +8,6 @@
      }
      Finally{
        Write-Host "exited.."
+       Stop-Transcript
      }
     
