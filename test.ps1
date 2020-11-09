@@ -1,4 +1,5 @@
  try{
+ Start-Transcript -path "demo.log" -append
            Write-Host 'fun'
      }
      catch{
