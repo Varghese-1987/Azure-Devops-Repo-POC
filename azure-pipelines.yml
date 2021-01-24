@@ -10,7 +10,7 @@ steps:
 - task: PowerShell@2
   inputs:
     targetType: filePath
-    filePath: '$(system.defaultWorkingDirectory)/test.ps1'
+    filePath: '$(system.defaultWorkingDirectory)/src/test.ps1'
   timeoutInMinutes: 120
 - task: CopyFiles@2
   displayName: 'Copy Artifact Files to: $(build.artifactstagingdirectory)'
